@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
         { opacity: 0, transform: 'translateY(30px)' },
         { opacity: 1, transform: 'translateY(0)' }
       ], {
-        duration: 500,
+        duration: 200,
         fill: 'forwards',
         easing: 'ease-out',
         delay: 0
