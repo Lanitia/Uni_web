@@ -88,6 +88,36 @@ button:hover {
   transform: translateY(-2px) scale(1.04);
 }
 
+.header-visual {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+#welcome-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .welcome-char {
   font-size: 3.2rem;
   font-weight: 900;
@@ -95,5 +125,18 @@ button:hover {
   letter-spacing: 0.18em;
   text-shadow: 0 4px 16px rgba(253,160,133,0.18);
   margin: 0 2px;
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.welcome-char.jump {
+  animation: jumpChar 0.45s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes jumpChar {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-28px) scale(1.08); }
+  60% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
   

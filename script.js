@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     title.appendChild(span);
   }
   const chars = title.querySelectorAll('.welcome-char');
+  // フェードインアニメーション
   chars.forEach((span, i) => {
     setTimeout(() => {
       span.animate([
@@ -29,5 +30,16 @@ window.addEventListener('DOMContentLoaded', () => {
       span.style.transform = 'translateY(0)';
     }, i * 120);
   });
+  // 跳ねるアニメーション
+  setTimeout(() => {
+    let idx = 0;
+    setInterval(() => {
+      chars[idx].classList.add('jump');
+      setTimeout(() => {
+        chars[idx].classList.remove('jump');
+      }, 450);
+      idx = (idx + 1) % chars.length;
+    }, 180);
+  }, chars.length * 120 + 400); // フェードイン完了後に開始
 });
   
