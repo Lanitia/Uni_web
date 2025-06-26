@@ -1,0 +1,89 @@
+body {
+  font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+}
+
+.interview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.interview-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.interview-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+
+.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 18px 16px 24px 16px;
+  text-align: left;
+}
+
+.card-content h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #fda085;
+}
+
+.card-content a {
+  color: #fda085;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card-content a:hover {
+  color: #f6d365;
+  text-decoration: underline;
+}
+
+.card-content p {
+  color: #555;
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .interview-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .interview-card {
+    width: 95vw;
+    max-width: 350px;
+  }
+} 
