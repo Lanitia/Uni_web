@@ -1,16 +1,63 @@
 body {
-    font-family: sans-serif;
-    background-color: #f9f9f9;
-    text-align: center;
-    padding-top: 50px;
-  }
-  
-  h1 {
-    color: #2c3e50;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
+  font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 60px;
+  margin: 0;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(253,160,133,0.08);
+}
+
+.about-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 10px 28px;
+  background: #fda085;
+  color: #fff;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(253,160,133,0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.about-link:hover {
+  background: #f6d365;
+  color: #fda085;
+  transform: translateY(-2px) scale(1.04);
+}
+
+p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+button {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: #fff;
+  color: #fda085;
+  border: 2px solid #fda085;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(253,160,133,0.10);
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: #fda085;
+  color: #fff;
+  border: 2px solid #f6d365;
+  transform: translateY(-2px) scale(1.04);
+}
   
