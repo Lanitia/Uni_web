@@ -60,4 +60,40 @@ button:hover {
   border: 2px solid #f6d365;
   transform: translateY(-2px) scale(1.04);
 }
+
+.top-link-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.top-link-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #fda085;
+  color: #fff;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 12px rgba(253,160,133,0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border: none;
+}
+
+.top-link-btn:hover {
+  background: #f6d365;
+  color: #fda085;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.welcome-char {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.18em;
+  text-shadow: 0 4px 16px rgba(253,160,133,0.18);
+  margin: 0 2px;
+}
   
