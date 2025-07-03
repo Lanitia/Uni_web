@@ -1,10 +1,9 @@
 body {
   font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  min-height: 100vh;
-  text-align: center;
-  padding-top: 60px;
   margin: 0;
+  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
@@ -90,21 +89,32 @@ button:hover {
 
 .header-visual {
   position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 32px auto;
-  height: 260px;
+  width: 100vw;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  height: 28vw;
+  min-height: 180px;
+  max-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 
 .header-img {
-  width: 100%;
+  width: 100vw;
+  min-width: 100vw;
   height: 100%;
+  min-height: 100%;
+  max-width: none;
   object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
   border-radius: 0 0 32px 32px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 
 #welcome-title {
@@ -138,5 +148,20 @@ button:hover {
   30% { transform: translateY(-28px) scale(1.08); }
   60% { transform: translateY(0); }
   100% { transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .header-visual {
+    height: 32vw;
+    min-height: 120px;
+    max-height: 180px;
+    border-radius: 0 0 18px 18px;
+  }
+  .header-img {
+    border-radius: 0 0 18px 18px;
+  }
+  #welcome-title {
+    font-size: 1.5rem;
+  }
 }
   
