@@ -72,11 +72,23 @@ body {
 }
 
 .cartridge-content {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  height: 120px;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  height: 100%;
+  display: block;
+}
+
+.game-img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0px; /* .cartridge-labelの高さに合わせて調整 */
+  height: calc(100% - 50px);
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 0 0 20px 20px;
+  pointer-events: none;
 }
 
 .player-img {
@@ -104,6 +116,7 @@ body {
   position: absolute;
   bottom: 15px;
   right: 20px;
+  z-index: 2;
   background: linear-gradient(135deg, #27ae60, #2ecc71);
   color: #fff;
   padding: 8px 16px;

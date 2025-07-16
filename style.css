@@ -60,77 +60,138 @@ button:hover {
   transform: translateY(-2px) scale(1.04);
 }
 
-.top-link-buttons {
+.flat-button {
+  display: inline-block;
+  width: auto;
+  min-width: 120px;
+  max-width: 100%;
   position: relative;
+  padding: 1em 2em;
+  background: #111;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  text-decoration: none;
+  transition: color 0.5s cubic-bezier(.4,0,.2,1), background 0.3s;
+  text-align: center;
+  line-height: 1;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.flat-button::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #ffee00;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+  z-index: -1;
+}
+
+.flat-button:hover::before,
+.flat-button:focus::before {
+  transform: translateX(0);
+}
+
+.flat-button:hover::after,
+.flat-button:focus::after {
+  transform: translateX(0);
+}
+
+.flat-button:hover, .flat-button:focus {
+  color: #111;
+}
+
+.top-link-buttons, .top-link-btn, #about-btn, #interview-btn, .btn-flat {
+  all: unset;
+}
+.top-link-btn, #about-btn, #interview-btn, .btn-flat {
+  display: inline-block;
+  background: #eeeeee;
+  color: #222;
+  border: 1px solid #888;
+  border-radius: 0;
+  padding: 0.5em 2em;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.top-link-buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  z-index: 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  margin: 40px 0 32px 0;
 }
 
 .top-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  max-width: 420px;
+  width: 100%;
+  padding: 0 32px;
+  height: 72px;
+  font-size: 1.35rem;
+  font-weight: bold;
+  border-radius: 36px;
+  background: linear-gradient(180deg, #fffbe6 0%, #ffe082 100%);
+  color: #b28704;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(255,193,7,0.18);
+  border: 3px solid #ffe082;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.18s;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  display: inline-block;
-  padding: 14px 36px;
-  background: #fda085;
-  color: #fff;
-  border-radius: 28px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.15rem;
-  box-shadow: 0 2px 12px rgba(253,160,133,0.15);
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  border: none;
-  z-index: 1;
 }
 
-.top-link-btn::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.35) 40%, rgba(253,160,133,0.0) 70%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  z-index: 0;
+.top-link-btn:hover, .top-link-btn:focus {
+  background: linear-gradient(180deg, #ffe082 0%, #fffbe6 100%);
+  color: #ff9800;
+  border: 3px solid #ffd54f;
+  box-shadow: 0 8px 32px rgba(255,193,7,0.18), 0 2px 8px 0 rgba(255,193,7,0.20);
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
 }
 
-.top-link-btn:hover::before {
-  animation: ripple 0.7s cubic-bezier(.4,0,.2,1);
-  opacity: 1;
+#interview-btn {
+  background: linear-gradient(180deg, #fffbe6 0%, #ffe082 100%);
+  color: #b28704;
+  border: 3px solid #ffe082;
+}
+#interview-btn:hover, #interview-btn:focus {
+  background: linear-gradient(180deg, #ffe082 0%, #fffbe6 100%);
+  color: #ff9800;
+  border: 3px solid #ffd54f;
 }
 
-@keyframes ripple {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.7;
+@media (max-width: 700px) {
+  .top-link-buttons {
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 16px 0;
   }
-  60% {
-    width: 260px;
-    height: 260px;
-    opacity: 0.4;
+  .top-link-btn {
+    min-width: 0;
+    width: 100%;
+    max-width: 98vw;
+    height: 56px;
+    font-size: 1.05rem;
+    padding: 0 12px;
+    border-radius: 24px;
   }
-  100% {
-    width: 320px;
-    height: 320px;
-    opacity: 0;
-  }
-}
-
-.top-link-btn:hover {
-  background: #f6d365;
-  color: #fda085;
-  transform: translateY(-2px) scale(1.04);
 }
 
 .header-visual {
@@ -288,123 +349,4 @@ button:hover {
   margin: 0 auto;
   max-width: 600px;
 }
-
-#interview-btn {
-  display: block;
-  width: 100vw;
-  max-width: 100vw;
-  margin: 0;
-  position: relative;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 0;
-  font-size: 1.25rem;
-  padding: 22px 0 22px 48px;
-  box-sizing: border-box;
-  z-index: 0;
-  text-align: left;
-}
-#interview-btn::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(253,160,133,0), rgba(246,211,101,0.45));
-  pointer-events: none;
-  z-index: -1;
-}
-#interview-btn span {
-  position: relative;
-  z-index: 1;
-}
-
-#about-btn {
-  position: absolute;
-  left: 90%;
-  top: 80%;
-  right: auto;
-  bottom: auto;
-  width: 90px;
-  height: 90px;
-  min-width: 90px;
-  min-height: 90px;
-  max-width: 90px;
-  max-height: 90px;
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  font-size: 1.08rem;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 24px 0 rgba(33,150,243,0.25), 0 1.5px 6px 0 rgba(33,150,243,0.18);
-  background: linear-gradient(135deg, #42a5f5 60%, #1976d2 100%);
-  color: #fff;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  z-index: 3;
-  white-space: pre-line;
-  text-align: center;
-  overflow: hidden;
-  transform: translate(-50%, -50%);
-  border: none;
-}
-#about-btn:hover {
-  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
-  color: #fff;
-  box-shadow: 0 10px 32px 0 rgba(33,150,243,0.32), 0 2px 8px 0 rgba(33,150,243,0.20);
-}
-
-@media (max-width: 900px) {
-  #about-btn {
-    width: 65px;
-    height: 65px;
-    min-width: 65px;
-    min-height: 65px;
-    max-width: 65px;
-    max-height: 65px;
-    font-size: 0.92rem;
-    left: 85%;
-    top: 85%;
-    right: auto;
-    bottom: auto;
-    padding: 0 4px;
-    transform: translate(-50%, -50%);
-    aspect-ratio: 1/1;
-  }
-}
-
-@media (max-width: 700px) {
-  .header-visual {
-    height: 48vw;
-    min-height: 120px;
-    max-height: 200px;
-  }
-  #about-btn {
-    position: static;
-    width: 65px;
-    height: 65px;
-    min-width: 65px;
-    min-height: 65px;
-    max-width: 65px;
-    max-height: 65px;
-    border-radius: 50%;
-    margin: 0 0 8px 0;
-    font-size: 0.92rem;
-    padding: 0 4px;
-    box-shadow: 0 6px 24px 0 rgba(33,150,243,0.25), 0 1.5px 6px 0 rgba(33,150,243,0.18);
-    display: block;
-    text-align: center;
-    white-space: normal;
-    aspect-ratio: 1/1;
-  }
-  .top-link-buttons {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-  }
   
