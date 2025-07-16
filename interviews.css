@@ -1,89 +1,136 @@
 body {
   font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   margin: 0;
   min-height: 100vh;
+  color: #fff;
 }
 
-.container {
-  max-width: 900px;
+.switch-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 40px 20px;
 }
 
-h1 {
+.switch-header {
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 40px;
-  font-size: 2.2rem;
+  margin-bottom: 50px;
 }
 
-.interview-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-}
-
-.interview-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 270px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  overflow: hidden;
-}
-
-.interview-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-}
-
-.thumb {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 18px 16px 24px 16px;
-  text-align: left;
-}
-
-.card-content h2 {
-  font-size: 1.1rem;
+.switch-header h1 {
+  font-size: 2.5rem;
   margin: 0 0 10px 0;
-  color: #fda085;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.card-content a {
-  color: #fda085;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.card-content a:hover {
-  color: #f6d365;
-  text-decoration: underline;
-}
-
-.card-content p {
-  color: #555;
-  font-size: 0.98rem;
+.switch-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
   margin: 0;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.game-cartridge {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  border-radius: 20px;
+  width: 320px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.game-cartridge:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+.cartridge-label {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.game-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.game-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.cartridge-content {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 120px;
+}
+
+.player-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3498db;
+}
+
+.game-info h3 {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+  color: #ecf0f1;
+}
+
+.game-info p {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.play-button {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(39,174,96,0.3);
+}
+
+.play-button:hover {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(39,174,96,0.4);
 }
 
 @media (max-width: 800px) {
-  .interview-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .interview-card {
-    width: 95vw;
+  .game-cartridge {
+    width: 100%;
     max-width: 350px;
+  }
+  .switch-header h1 {
+    font-size: 2rem;
   }
 } 

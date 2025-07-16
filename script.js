@@ -30,16 +30,23 @@ window.addEventListener('DOMContentLoaded', () => {
       span.style.transform = 'translateY(0)';
     }, i * 120);
   });
-  // 跳ねるアニメーション
+  // 跳ねるアニメーション（重なりあり、1巡ごとに5秒待機）
   setTimeout(() => {
-    let idx = 0;
-    setInterval(() => {
-      chars[idx].classList.add('jump');
-      setTimeout(() => {
-        chars[idx].classList.remove('jump');
-      }, 450);
-      idx = (idx + 1) % chars.length;
-    }, 180);
+    const jumpDuration = 450; // ms
+    const jumpStagger = 120; // ms
+    const waitAfterLoop = 5000; // ms
+    function jumpLoop() {
+      chars.forEach((span, i) => {
+        setTimeout(() => {
+          span.classList.add('jump');
+          setTimeout(() => {
+            span.classList.remove('jump');
+          }, jumpDuration);
+        }, i * jumpStagger);
+      });
+      setTimeout(jumpLoop, chars.length * jumpStagger + waitAfterLoop);
+    }
+    jumpLoop();
   }, chars.length * 120 + 400); // フェードイン完了後に開始
-});
+  });
   
