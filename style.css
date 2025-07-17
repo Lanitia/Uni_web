@@ -349,4 +349,30 @@ button:hover {
   margin: 0 auto;
   max-width: 600px;
 }
-  
+
+.fusion-section {
+  background: #ffe9f7;
+  padding: 32px 0 40px 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* 罫線パターン */
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.18) 0, rgba(255,255,255,0.18) 2px, transparent 2px, transparent 40px),
+    repeating-linear-gradient(225deg, rgba(255,255,255,0.18) 0, rgba(255,255,255,0.18) 2px, transparent 2px, transparent 40px);
+}
+.fusion-section h2 {
+  color: #c2185b;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  letter-spacing: 0.08em;
+}
+.fusion-section p {
+  color: #880e4f;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
+}
